@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix دارنا - تطبيق العائلة الخاص",
+  "description": "تطبيق محادثات عائلي آمن وخاص ومحمي بالبصمة للمكالمات الصوتية، الصور ذات العرض لمرة واحدة، الرد التلقائي، ومساعد العائلة الذكي.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

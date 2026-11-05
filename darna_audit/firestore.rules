@@ -1,0 +1,37 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Default deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Family Member Users Collection
+    match /darna_users/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update: if isSignedIn();
+      allow delete: if isSignedIn() && (
+        request.auth.uid == userId ||
+        resource.data.role == 'FAMILY_OWNER' ||
+        resource.data.role == 'FAMILY_ADMIN' ||
+        resource.data.role == 'ADMIN'
+      );
+    }
+
+    // Family Chats Collection
+    match /darna_chats/{chatId} {
+      allow read, write: if isSignedIn();
+    }
+
+    // Family Messages Collection
+    match /darna_messages/{messageId} {
+      allow read, write: if isSignedIn();
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "دارنا - تطبيق العائلة",
+  "short_name": "دارنا",
+  "description": "تطبيق التواصل والدردشة العائلي الخاص",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#042f2e",
+  "theme_color": "#0f766e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='45' fill='%230f766e'/><path d='M96 35 L155 85 L138 85 L138 152 C138 156 134 160 130 160 L62 160 C58 160 54 156 54 152 L54 85 L37 85 Z' fill='%23ffffff'/><circle cx='96' cy='105' r='16' fill='%230f766e'/><path d='M80 142 C80 130 87 125 96 125 C105 125 112 130 112 142 Z' fill='%230f766e'/></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='120' fill='%230f766e'/><path d='M256 95 L415 225 L370 225 L370 410 C370 420 360 430 350 430 L162 430 C152 430 142 420 142 410 L142 225 L97 225 Z' fill='%23ffffff'/><circle cx='256' cy='275' r='42' fill='%230f766e'/><path d='M215 385 C215 350 234 335 256 335 C278 335 297 350 297 385 Z' fill='%230f766e'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "appId": "com.darna.familychat",
+  "appName": "دارنا",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_icon_config_sample",
+      "iconColor": "#0d9488",
+      "sound": "bevel.wav"
+    }
+  }
+}

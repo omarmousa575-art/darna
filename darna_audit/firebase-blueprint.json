@@ -1,0 +1,71 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Family member profile entity",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "phone": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string", "enum": ["FAMILY_OWNER", "FAMILY_ADMIN", "FAMILY_MEMBER", "ADMIN", "MEMBER"] },
+        "status": { "type": "string", "enum": ["PENDING", "ACTIVE", "REJECTED"] },
+        "avatar": { "type": "string" },
+        "shortId": { "type": "string" },
+        "relationship": { "type": "string" },
+        "canCreateGroups": { "type": "boolean" },
+        "canSendInvites": { "type": "boolean" },
+        "registeredAt": { "type": "string" },
+        "isOnline": { "type": "boolean" }
+      },
+      "required": ["id", "phone", "name", "role", "status", "shortId"]
+    },
+    "Chat": {
+      "title": "Chat",
+      "description": "Private direct or family group chat session",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["DIRECT", "GROUP"] },
+        "participants": { "type": "array" },
+        "title": { "type": "string" },
+        "groupId": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "type", "participants"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "ChatMessage entity",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "chatId": { "type": "string" },
+        "senderId": { "type": "string" },
+        "senderName": { "type": "string" },
+        "senderAvatar": { "type": "string" },
+        "text": { "type": "string" },
+        "mediaUrl": { "type": "string" },
+        "mediaType": { "type": "string", "enum": ["text", "image", "audio", "view_once_image"] },
+        "isViewOnce": { "type": "boolean" },
+        "viewed": { "type": "boolean" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "chatId", "senderId", "senderName"]
+    }
+  },
+  "firestore": {
+    "/darna_users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Collection storing family member user profiles"
+    },
+    "/darna_chats/{chatId}": {
+      "schema": { "$ref": "#/entities/Chat" },
+      "description": "Collection storing family chats and group channels"
+    },
+    "/darna_messages/{messageId}": {
+      "schema": { "$ref": "#/entities/Message" },
+      "description": "Collection storing family chat messages"
+    }
+  }
+}
